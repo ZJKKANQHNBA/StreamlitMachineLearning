@@ -18,7 +18,7 @@ This app predicts the species of an **Iris** flower based on its sepal and petal
 # Load the trained model
 @st.cache_resource
 def load_model():
-    return joblib.load("iris_model.pkl")
+    return joblib.load("streamlit/iris_model.pkl")
 
 try:
     model = load_model()
