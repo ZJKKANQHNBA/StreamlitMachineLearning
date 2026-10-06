@@ -18,7 +18,7 @@ This app predicts the species of an **Iris** flower based on its sepal and petal
 # Load the trained model
 @st.cache_resource
 def load_model():
-    with open("iris_model.pkl", "rb") as file:
+    with open("streamlit/iris_model.pkl", "rb") as file:
         return pickle.load(file)
 
 try:
