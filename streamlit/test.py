@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import joblib
+import pickle
 
 # Set page configuration
 st.set_page_config(
@@ -18,7 +18,8 @@ This app predicts the species of an **Iris** flower based on its sepal and petal
 # Load the trained model
 @st.cache_resource
 def load_model():
-    return joblib.load("iris_model.pkl")
+    with open("iris_model.pkl", "rb") as file:
+        return pickle.load(file)
 
 try:
     model = load_model()
